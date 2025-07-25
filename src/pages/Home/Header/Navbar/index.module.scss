@@ -1,6 +1,15 @@
 .navbar {
   display: flex;
   justify-content: space-around;
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    place-items: center;
+    padding-bottom: 1rem;
+  }
   &-label {
+    color: #959595;
+    font-family: sans-serif;
   }
 }

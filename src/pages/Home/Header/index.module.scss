@@ -1,20 +1,49 @@
 .header {
   display: flex;
   justify-content: space-between;
+  place-items: center;
   &-logo {
     flex: 1;
-    border: 2px solid red;
+    background: linear-gradient(45deg, #fa6e00, #e60026);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: sans-serif;
+    font-size: 24px;
+    @media (max-width: 1023px) {
+      justify-content: center;
+      place-items: center;
+      display: flex;
+    }
   }
+  &__menuIcon {
+    flex: 1;
+    display: flex;
+    place-items: start;
+    @media (min-width: 1023px) {
+      display: none;
+    }
+  }
+
   &-navbar {
     flex: 1;
-    border: 2px solid red;
+    @media (max-width: 1023px) {
+      display: none;
+    }
   }
+
   &-hireMeBtn {
     flex: 1;
-    border: 2px solid red;
     display: flex;
     justify-content: end;
+
     &--btn {
+      background: linear-gradient(45deg, #fd6f00, #e46400);
+      padding: 8px;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      width: 3.75rem;
+      color: #fff;
     }
   }
 }
