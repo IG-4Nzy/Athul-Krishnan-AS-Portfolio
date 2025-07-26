@@ -5,6 +5,7 @@ import InstagramImg from "../../../assets/instagram.png";
 import LinkedInImg from "../../../assets/linkedin.png";
 import AvatarImg from "../../../assets/athul.jpeg";
 import { getWorkExperience } from "../../../helpers/utils";
+import resume from "../../../assets/ATHUL KRISHNAN A S.pdf";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -30,6 +31,13 @@ const Hero = () => {
       value: WORK_EXPERIENCE,
     },
   ];
+
+  const handleResumeDownload = () => {
+    const link = document.createElement("a");
+    link.href = resume;
+    link.download = "Athul_Resume.pdf";
+    link.click();
+  };
 
   const RenderSocialMedias = () => {
     return (
@@ -59,7 +67,10 @@ const Hero = () => {
         >
           {t(wordings.hireMe)}
         </button>
-        <button className={styles["hero__contents-actionBtns--download"]}>
+        <button
+          className={styles["hero__contents-actionBtns--download"]}
+          onClick={handleResumeDownload}
+        >
           {t(wordings.downloadResume)}
         </button>
       </div>
