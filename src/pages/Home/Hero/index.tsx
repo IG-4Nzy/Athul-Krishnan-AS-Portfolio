@@ -15,12 +15,12 @@ const Hero = () => {
     {
       icon: InstagramImg,
       title: t(wordings.instagram),
-      url: "",
+      url: "https://www.instagram.com/ig_4nzy/",
     },
     {
       icon: LinkedInImg,
       title: t(wordings.linkedIn),
-      url: "",
+      url: "https://www.linkedin.com/in/athulkrishnanas/",
     },
   ];
 
