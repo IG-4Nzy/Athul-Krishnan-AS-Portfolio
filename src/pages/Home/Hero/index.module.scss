@@ -1,0 +1,103 @@
+.hero {
+  height: calc(100vh - 60px);
+  display: flex;
+  &__contents {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    gap: 8px;
+    justify-content: center;
+
+    &-iam {
+      color: #707070;
+    }
+    &-name {
+      margin-top: 0.05rem;
+      color: #959595;
+    }
+    &-designation {
+      margin-top: 24px;
+      background: linear-gradient(45deg, #984300, #fd6f00, #ca5900);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: sans-serif;
+      font-size: 70px;
+      @media (max-width: 1023px) {
+        font-size: 40px;
+      }
+    }
+    &-socials {
+      display: flex;
+      gap: 1rem;
+    }
+    &-actionBtns {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+      &--hireme {
+        background: linear-gradient(45deg, #fd6f00, #e46400);
+        padding: 8px;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        width: 9.75rem;
+        color: #fff;
+        cursor: pointer;
+      }
+      &--download {
+        background: transparent;
+        padding: 8px;
+        border: 2px solid #959595;
+        border-radius: 4px;
+        width: 9.75rem;
+        color: #959595;
+        cursor: pointer;
+      }
+    }
+    &-stats {
+      display: flex;
+      border-radius: 8px;
+      padding: 1rem;
+      background-color: #1b1b1b;
+      margin-top: 2rem;
+      max-width: 300px;
+      &--stat {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        &--value {
+          color: #fd6f00;
+          font-size: 20px;
+        }
+        &--label {
+          color: #f5f2f2;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  &__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    &-container {
+      border-radius: 50%;
+      width: 70%;
+      height: auto;
+      aspect-ratio: 1/1;
+    }
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
+}
