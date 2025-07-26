@@ -1,3 +1,17 @@
 :root {
   font-size: 18px;
+
+  --background: #121212;          
+  --primary: #f8f9fa;           
+  --secondary: #cfcfcf;           
+
+  --highlight-1: #999999;          
+  --highlight-2: #6c757d;        
+  --highlight-3: #1a1a1a;       
+  --highlight-4: #959595;       
+
+  --accent-1: #ffd369;        
+  --accent-2: #ffaa00;           
+  --accent-3: #e6b800;             
+  --accent-4: #f9cb9c;            
 }

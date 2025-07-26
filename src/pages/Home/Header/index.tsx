@@ -17,7 +17,7 @@ const Header = ({ handleNavLinkClick }: PropType) => {
   return (
     <header className={styles["header"]}>
       <span className={styles["header__menuIcon"]}>
-        <MenuIcon color="#959595" size={22} onClick={() => setOpen(true)} />
+        <MenuIcon color="var(--highlight-4)" size={22} onClick={() => setOpen(true)} />
         <CustomDrawer
           children={
             <>

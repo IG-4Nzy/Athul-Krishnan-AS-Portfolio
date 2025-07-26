@@ -10,15 +10,20 @@
     justify-content: center;
 
     &-iam {
-      color: #707070;
+      color: var(--highlight-2);
     }
     &-name {
       margin-top: 0.05rem;
-      color: #959595;
+      color: var(--highlight-1);
     }
     &-designation {
       margin-top: 24px;
-      background: linear-gradient(45deg, #984300, #fd6f00, #ca5900);
+      background: linear-gradient(
+        45deg,
+        var(--accent-3),
+        var(--accent-1),
+        var(--accent-2)
+      );
       background-clip: text;
       -webkit-text-fill-color: transparent;
       font-family: sans-serif;
@@ -36,30 +41,78 @@
       gap: 2rem;
       margin-top: 1rem;
       &--hireme {
-        background: linear-gradient(45deg, #fd6f00, #e46400);
+        background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
         padding: 8px;
         outline: none;
         border: none;
         border-radius: 4px;
         width: 9.75rem;
-        color: #fff;
+        color: var(--highlight-3);
         cursor: pointer;
+          transition: all ease-in 200ms;
+        &:hover{
+           scale: 1.2;
+        }
       }
       &--download {
+        position: relative;
         background: transparent;
         padding: 8px;
-        border: 2px solid #959595;
+        border: 2px solid var(--highlight-1);
         border-radius: 4px;
         width: 9.75rem;
-        color: #959595;
+        color: var(--highlight-1);
         cursor: pointer;
+        overflow: hidden;
+        z-index: 0;
+        transition: all ease-in 200ms;
+        &:hover{
+           scale: 1.2;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 4px;
+          padding: 2px; /* matches your border width */
+          background: linear-gradient(
+            270deg,
+            var(--accent-1),
+            var(--highlight-1),
+            var(--accent-1)
+          );
+          background-size: 600% 600%;
+          animation: borderMove 2s linear infinite;
+          -webkit-mask: linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+          z-index: -1;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        &:hover::before {
+          opacity: 1;
+         
+        }
+      }
+
+      @keyframes borderMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
       }
     }
     &-stats {
       display: flex;
       border-radius: 8px;
       padding: 1rem;
-      background-color: #1b1b1b;
+      background-color: var(--highlight-3);
       margin-top: 2rem;
       max-width: 300px;
       &--stat {
@@ -67,11 +120,11 @@
         flex-direction: column;
         gap: 0.5rem;
         &--value {
-          color: #fd6f00;
+          color: var(--accent-4);
           font-size: 20px;
         }
         &--label {
-          color: #f5f2f2;
+          color: var((--secondary));
           font-size: 16px;
         }
       }
@@ -84,7 +137,7 @@
     place-items: center;
     &-container {
       border-radius: 50%;
-      width: 70%;
+      width: 90%;
       height: auto;
       aspect-ratio: 1/1;
     }
@@ -93,7 +146,8 @@
       height: 100%;
       object-fit: cover;
       overflow: hidden;
-      border-radius: 50%;
+      border-radius: 20%;
+      box-shadow: 0 0 20px rgba(255, 211, 105, 0.4);
     }
   }
 

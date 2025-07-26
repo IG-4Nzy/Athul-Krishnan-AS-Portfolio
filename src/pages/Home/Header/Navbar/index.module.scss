@@ -9,7 +9,12 @@
     padding-bottom: 1rem;
   }
   &-label {
-    color: #959595;
+    color: var(--highlight-1);
     font-family: sans-serif;
+    transition: color ease-in 200ms;
+    cursor: pointer;
+    &:hover{
+      color: var(--accent-1);
+    }
   }
 }

@@ -17,6 +17,28 @@ export function CustomDrawer({
   disableScrollLocking,
   detent = "full-height",
 }: PropType) {
+  const styles = {
+    container: {
+      backgroundColor: "#1a1a1a",
+      borderTopLeftRadius: "20px",
+      borderTopRightRadius: "20px",
+      color: "#f8f9fa",
+      boxShadow: "0 -5px 20px rgba(0, 0, 0, 0.6)",
+      paddingBlock: "1.5rem",
+      display:"flex",
+      justifyContent:"center",
+      maxWidth:"100vw"
+    },
+    content: {
+      color: "#f8f9fa",
+      fontSize: "1rem",
+    },
+    backdrop: {
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      backdropFilter: "blur(3px)",
+    },
+  };
+
   return (
     <Sheet
       isOpen={isOpen}
@@ -25,11 +47,11 @@ export function CustomDrawer({
       disableDrag={disableDrag}
       disableScrollLocking={disableScrollLocking}
     >
-      <Sheet.Container>
-        <Sheet.Header />
-        <Sheet.Content>{children}</Sheet.Content>
+      <Sheet.Container style={styles.container}>
+        <Sheet.Header  />
+        <Sheet.Content style={styles.content}>{children}</Sheet.Content>
       </Sheet.Container>
-      <Sheet.Backdrop onTap={() => setOpen(false)} />
+      <Sheet.Backdrop style={styles.backdrop} onTap={() => setOpen(false)} />
     </Sheet>
   );
 }
