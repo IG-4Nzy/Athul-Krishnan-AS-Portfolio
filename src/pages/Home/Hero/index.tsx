@@ -42,6 +42,7 @@ const Hero = () => {
               onClick={() => window.open(media?.url, "_blank")}
               alt={`social-media-${index}`}
               style={{ cursor: "pointer", width: "32px" }}
+              title={media?.title}
             />
           );
         })}
@@ -52,7 +53,10 @@ const Hero = () => {
   const RenderActionButtons = () => {
     return (
       <div className={styles["hero__contents-actionBtns"]}>
-        <button className={styles["hero__contents-actionBtns--hireme"]}>
+        <button
+          className={styles["hero__contents-actionBtns--hireme"]}
+          disabled
+        >
           {t(wordings.hireMe)}
         </button>
         <button className={styles["hero__contents-actionBtns--download"]}>

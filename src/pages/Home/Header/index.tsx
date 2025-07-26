@@ -34,7 +34,7 @@ const Header = ({ handleNavLinkClick }: PropType) => {
         <Navbar handleNavLinkClick={handleNavLinkClick} />
       </div>
       <div className={styles["header-hireMeBtn"]}>
-        <button className={styles["header-hireMeBtn--btn"]}>
+        <button className={styles["header-hireMeBtn--btn"]} disabled>
           {t(wordings.hireMe)}
         </button>
       </div>

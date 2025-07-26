@@ -49,6 +49,12 @@
       &:hover {
         scale: 1.2;
       }
+       &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+          pointer-events: none;
+          transform: none;
+        }
     }
   }
 }
